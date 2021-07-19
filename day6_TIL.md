@@ -8,9 +8,13 @@ situations
 - Second, xv6 periodically forces a switch when a process is executing user instructions.
 
 	Chellenges
+
       1. how to switch from one process to another? >> standard mechanism of context switching
+
       2. how to do context switching transparently? >> using timer interrupt
+
       3. many CPUs may be switching among processes concurrently, and a locking plan is necessary to avoid races
+
       4. when a process has exited its memory and other resources must be freed, but it cannot do all of this itself >> ?
 
 ---
@@ -24,9 +28,13 @@ Saving and restoring CPU registers
 - struct context 
 
 	ebx(Extended Base Register)
+
 	ebp(Extended Base Pointer)
+
 	esi(Extended Source Index)
+
 	edi(Extended Destination Index)
+
 	eip(Extended Instruction Pointer = PC)
 
 ---
