@@ -12,6 +12,12 @@ OS수업에서 Round-Robin방식 을 포함해 FIFO, SJF, MLFQ 등의 스케줄�
       
 ### 2. POSIX
       
+<<<<<<< HEAD
      이식 가능 운영 체제 인터페이스(interface, Portable Operating System Interface)의 약자로, 서로 다른 UNIX OS의 공통 API를 정리하여 이식성이 높은 유닉스 응용 프로그램을 개발하기 위한 목적으로 IEEE가 책정한 애플리케이션 인터페이스 규격.
+=======
+     이식 가능 운영 체제 인터페이스(interface, Portable Operating System Interface)의 약자로,
+     서로 다른 UNIX OS의 공통 API를 정리하여 이식성이 높은 유닉스 응용 프로그램을 개발하기 위한 목적으로 
+     IEEE가 책정한 애플리케이션 인터페이스 규격.
+>>>>>>> d34a64bcd38d6961fe34e20d4c01a90112f724bc
 
 다른 친구들과 테스트케이스를 공유하기 위해 API를 통합하는 작업을 진행했는데, POSIX같은 공식 규격을 지키면서 코드를 짜는 습관이 중요한 부분일 수 있다는 점을 배웠다.
