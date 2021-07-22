@@ -190,7 +190,7 @@ fork(void)
 	}
 
 	// Copy process state from proc.
-	if((np->pgdir = copyuvm(curproc->pgdir, curproc->sz)) == 0){
+	if((np->pgdir = copyuvm(curproc->pgdir, curproc->sz, curproc->st_sz)) == 0){
 		kfree(np->kstack);
 		np->kstack = 0;
 		np->state = UNUSED;
@@ -452,15 +452,6 @@ scheduler(void)
 			}
 
 			if(maxpri == p->priority){
-				for(tmp = ptable.proc; tmp < &ptable.proc[NPROC]; tmp++){
-					if(tmp->state != RUNNABLE) continue; 
-					if(tmp->pid != p->pid){
-						tmp->priority++;
-						if(tmp->priority > 10 || tmp->priority < -10) tmp->priority = 0;
-					}
-				}
-				
-				p->priority--;
 				c->proc = p;
 				switchuvm(p);
 				p->state = RUNNING;

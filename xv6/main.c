@@ -53,11 +53,8 @@ mpmain(void)
 {
   cprintf("cpu%d: starting %d\n", cpuid(), cpuid());
   idtinit();       // load idt register
-  cprintf("zz\n");
   xchg(&(mycpu()->started), 1); // tell startothers() we're up
-  cprintf("zz2\n");
   scheduler();     // start running processes
-  cprintf("zz3\n");
 }
 
 pde_t entrypgdir[];  // For entry.S
