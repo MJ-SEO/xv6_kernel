@@ -1,4 +1,4 @@
-#### Xv6 kernel memory layout
+### Xv6 kernel memory layout
     
 Xv6의 address space는 아래와 같다.
 
@@ -16,7 +16,7 @@ Xv6의 address space는 아래와 같다.
 ---
   
 
-#### How we load the program into memory and set up the page table?
+### How we load the program into memory and set up the page table?
   
 1. Opens the executable file and parses it // ELF format, header
 
@@ -32,7 +32,7 @@ Xv6의 address space는 아래와 같다.
 ---
   
 
-#### 3. Lab3 TODO list
+### Lab3 TODO list
 
 1. process structure에 새로운 stack pointer를 위한 변수를 하나 만든다.
 
