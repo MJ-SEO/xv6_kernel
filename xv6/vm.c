@@ -224,7 +224,7 @@ allocuvm(pde_t *pgdir, uint oldsz, uint newsz)
   char *mem;
   uint a;
 
-  if(newsz >= KERNBASE)
+  if(newsz >= KERNBASE) // [ME]
     return 0;
   if(newsz < oldsz)
     return oldsz;
@@ -338,8 +338,9 @@ copyuvm(pde_t *pgdir, uint sz, uint st_sz)
     }
   }
 
+  // [ME]
   for(i = 1; i <= st_sz; i++){
-    if((pte = walkpgdir(pgdir, (void *)((STACKTOP-PGSIZE+1)*i) , 0)) == 0)
+    if((pte = walkpgdir(pgdir, (void *)(STACKTOP - PGSIZE * i + 1) , 0)) == 0)
       panic("copyuvm: pte should exist");
     if(!(*pte & PTE_P))
       panic("copyuvm: page not present");
@@ -348,7 +349,7 @@ copyuvm(pde_t *pgdir, uint sz, uint st_sz)
     if((mem = kalloc()) == 0)
       goto bad;
     memmove(mem, (char*)P2V(pa), PGSIZE);
-    if(mappages(d, (void*)((STACKTOP-PGSIZE+1)*i), PGSIZE, V2P(mem), flags) < 0) {
+    if(mappages(d, (void*)(STACKTOP - PGSIZE * i + 1), PGSIZE, V2P(mem), flags) < 0) {
       kfree(mem);
       goto bad;
     }
