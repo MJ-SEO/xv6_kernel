@@ -6,7 +6,7 @@
 
 [Xv6_code](https://pdos.csail.mit.edu/6.828/2016/xv6/xv6-rev9.pdf)
 
-## LAB
+# LAB
 
 ## [Lab0 - Tutorial](https://github.com/MJ-SEO/xv6_kernel/tree/main/Lab0)
 
@@ -21,6 +21,8 @@
 	2. The Boot Loader
 
 	3. The Kernel
+
+---
 
 ## [Lab1 - System Calls](https://github.com/MJ-SEO/xv6_kernel/tree/main/Lab1)
 
@@ -38,6 +40,7 @@
 
 	4. The Process Structure and Modify it
 
+---
 
 ## [Lab2 - Schedular](https://github.com/MJ-SEO/xv6_kernel/tree/main/Lab2)
 
@@ -54,6 +57,8 @@
 	2. How to Implement a Scheduling Policy and Characterize its Impact on Performance.
 
 	3. Priority Inversion and a Possible Solution for it
+
+---
 
 ## [Lab3 - Memory Management](https://github.com/MJ-SEO/xv6_kernel/tree/main/Lab3)
 
